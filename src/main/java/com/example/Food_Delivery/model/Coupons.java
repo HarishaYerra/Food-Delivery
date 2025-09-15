@@ -1,5 +1,7 @@
 package com.example.Food_Delivery.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,13 +11,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "OrderItems")
-public class OrderItems {
+@Table(name = "Coupons")
+public class Coupons {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int orderitem_id;
-	private int order_id;
-	private int item_id;
-	private int quantity;
+	private int coupon_id;
+	private int coupon_code;
+	private Double discount_amount;
+	private Date expiry_date;
 }
