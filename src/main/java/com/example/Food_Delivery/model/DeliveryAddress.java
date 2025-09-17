@@ -19,7 +19,7 @@ public class DeliveryAddress {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int address_id;
-	private int customer_id;
+//	private int customer_id;
 	private String address_line1;
 	private String address_line2;
 	private String city;
@@ -29,5 +29,5 @@ public class DeliveryAddress {
 	@ManyToOne
 	@JoinColumn(name="customer_id")
 	@JsonBackReference
-	private Customers customers;
+	private Customers customer;
 }

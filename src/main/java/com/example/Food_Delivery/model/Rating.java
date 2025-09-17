@@ -19,19 +19,19 @@ public class Rating {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int ratting_id;
-	private int order_id;
-	private int restaurant_id;
+	//private int order_id;
+	//private int restaurant_id;
 	private int rating;
 	private String review;
 	
 	@ManyToOne
 	@JoinColumn(name="order_id")
 	@JsonBackReference
-	private Orders orders;
+	private Orders order;
 	
 	@ManyToOne
 	@JoinColumn(name="restaurant_id")
 	@JsonBackReference
-	private Restaurants restaurants;
+	private Restaurants restaurant;
 	
 }

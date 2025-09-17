@@ -26,7 +26,7 @@ public class MenuItems {
 	private String item_name;
 	private String item_description;
 	private Long item_price;
-	private int restaurant_id;
+	//private int restaurant_id;
 	
 	@OneToMany(mappedBy="menuitem")
 	@JsonManagedReference
@@ -35,5 +35,5 @@ public class MenuItems {
 	@ManyToOne
 	@JoinColumn(name="restaurant_id")
 	@JsonBackReference
-	private Restaurants restaurants;
+	private Restaurants restaurant;
 }

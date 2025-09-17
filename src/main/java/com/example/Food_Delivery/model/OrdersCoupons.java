@@ -19,17 +19,17 @@ public class OrdersCoupons {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int order_id;
-    private int coupon_id;
+    //private int order_id;
+    //private int coupon_id;
     
     @ManyToOne
 	@JoinColumn(name="coupon_id")
 	@JsonBackReference
-	private Coupons coupons;
+	private Coupons coupon;
     
     @ManyToOne
    	@JoinColumn(name="order_id")
    	@JsonBackReference
-   	private Orders orders;
+   	private Orders order;
 }
 

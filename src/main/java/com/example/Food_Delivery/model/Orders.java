@@ -25,9 +25,9 @@ public class Orders {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int order_id;
 	private Date order_date;
-	private int customer_id;
-	private int restaurant_id;
-	private int deliverydriver_id;
+//	private int customer_id;
+//	private int restaurant_id;
+//	private int deliverydriver_id;
 	private String order_status;
 	
 	
@@ -47,12 +47,12 @@ public class Orders {
 	@ManyToOne
 	@JoinColumn(name="restaurant_id")
 	@JsonBackReference
-	private Restaurants restaurants;
+	private Restaurants restaurant;
 	
 	@ManyToOne
 	@JoinColumn(name="customer_id")
 	@JsonBackReference
-	private Customers customers;
+	private Customers customer;
 	
 	@ManyToOne
 	@JoinColumn(name="driver_id")

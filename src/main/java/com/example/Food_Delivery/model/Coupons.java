@@ -25,7 +25,7 @@ public class Coupons {
 	private Double discount_amount;
 	private Date expiry_date;
 	
-	@OneToMany(mappedBy="coupons")
+	@OneToMany(mappedBy="coupon")
 	@JsonManagedReference
 	private List<OrdersCoupons> ordercoupons;
 }
