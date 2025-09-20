@@ -40,7 +40,7 @@ public class CustomersController {
 		return ResponseEntity.ok(updated);
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteCustomer(int id) throws CustomException{
 		customerService.deleteCustomer(id);
 		return ResponseEntity.ok("Customer deleted with id:"+id);

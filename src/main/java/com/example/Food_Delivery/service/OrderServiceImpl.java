@@ -18,7 +18,24 @@ public class OrderServiceImpl implements OrdersService {
 		return ordersRepository.findById(id)
 				.orElseThrow(()->new CustomException("Order not found with id:"+id));
 	}
-//	public Orders createOrders();
-//	public Orders updateOrderStatus();
-//	public Orders deleteOrder();
+//	@Override
+//	public Orders createOrders(int id,Orders order) throws CustomException{
+//		order.setOrder_date(null);
+//		order.set
+//	}
+	
+	@Override
+	public Orders updateOrderStatus(int id, Orders updatedStatus) throws CustomException{
+		Orders existing=ordersRepository.findById(id)
+				.orElseThrow(()->new CustomException("Order not found with id:"+id));
+		existing.setOrder_status(updatedStatus.getOrder_status());
+		return ordersRepository.save(existing);
+	}
+	
+	@Override
+	public void deleteOrder(int id) throws CustomException{
+		Orders order=ordersRepository.findById(id)
+				.orElseThrow(()->new CustomException("Order not found with id:"+id));
+		ordersRepository.delete(order);
+	}
 }
